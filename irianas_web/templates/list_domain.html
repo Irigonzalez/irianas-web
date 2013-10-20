@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}
+    Lista de Dominios
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="btn-group btn-group-justified">
+            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-home"></i> Inicio</a>
+            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-cloud"></i> Servidores</a>
+            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-tower"></i> Clientes</a>
+            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Servicios</a>
+            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-question-sign"></i> Estado</a>
+        </div>
+    </div>
+
+    </br>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading"><i class="glyphicon glyphicon-exclamation-sign"></i> Lista de Dominios</div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Dominio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="label label-success">node.1</span></td>
+                                        <td><a href="#" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Eliminar </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="label label-success">node.2</span></td>
+                                        <td><a href="#" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Eliminar </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="label label-success">node.3</span></td>
+                                        <td><a href="#" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Eliminar </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="label label-success">node.4</span></td>
+                                        <td><a href="#" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Eliminar </a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

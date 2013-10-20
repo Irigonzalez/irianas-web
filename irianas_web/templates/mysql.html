@@ -1,0 +1,351 @@
+{% extends "base.html" %}
+{% block title %}
+    Confi_MySQL
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="btn-group btn-group-justified">
+            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-home"></i> Inicio</a>
+            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-cloud"></i> Servidores</a>
+            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-tower"></i> Clientes</a>
+            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Servicios</a>
+            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-question-sign"></i> Estado</a>
+        </div>
+    </div>
+
+    </br>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading"><i class="glyphicon glyphicon-exclamation-sign"></i> Configuraci&oacute;n - MySQL </div>
+                    <div class="panel-body">
+                        <form action="" method="POST" role="form">
+                            <legend>MySQL </legend>
+                            
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                    <div class="form-group">
+                                        <label for="">bind-address:</label>
+                                        <input type="text" class="form-control" id="" placeholder="0.0.0.0">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                    <div class="form-group">
+                                        <label for="">binlog_cache_size:</label>
+                                        <input type="text" class="form-control" id="" placeholder="32768">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                    <div class="form-group">
+                                        <label for="">bulk_insert_buffer_size:</label>
+                                        <input type="text" class="form-control" id="" placeholder="8388608">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">connect_timeout:</label>
+                                        <input type="text" class="form-control" id="" placeholder="10">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">completion_type:</label>
+                                        <input type="text" class="form-control" id="" placeholder="0">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">concurrent_insert:</label>
+                                        <select name="anonymous" id="inputAnonymous" class="form-control">
+                                            <option value="TRUE">TRUE</option>
+                                            <option value="FALSE">FALSE</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <legend>Innodb</legend>
+                            <div class="row">
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_additional_mem_pool_size:</label>
+                                        <input type="text" class="form-control" id="" placeholder="1048576">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_autoextend_increment:</label>
+                                        <input type="text" class="form-control" id="" placeholder="8">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_buffer_pool_awe_mem_mb:</label>
+                                        <input type="text" class="form-control" id="" placeholder="0">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_buffer_pool_size:</label>
+                                        <input type="text" class="form-control" id="" placeholder="8388608">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_checksums:</label>
+                                        <select name="anonymous" id="inputAnonymous" class="form-control">
+                                            <option value="TRUE">TRUE</option>
+                                            <option value="FALSE">FALSE</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_commit_concurrency:</label>
+                                        <input type="text" class="form-control" id="" placeholder="0">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_concurrency_tickets:</label>
+                                        <input type="text" class="form-control" id="" placeholder="500">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_data_file_path:</label>
+                                        <input type="text" class="form-control" id="" placeholder="ibdata1:10M:autoextend">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_fast_shutdown:</label>
+                                        <input type="text" class="form-control" id="" placeholder="1">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_file_io_threads:</label>
+                                        <input type="text" class="form-control" id="" placeholder="4">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_file_per_table:</label>
+                                        <select name="anonymous" id="inputAnonymous" class="form-control">
+                                            <option value="TRUE">TRUE</option>
+                                            <option value="FALSE">FALSE</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_flush_log_at_trx_commit:</label>
+                                        <input type="text" class="form-control" id="" placeholder="1">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_force_recovery:</label>
+                                        <input type="text" class="form-control" id="" placeholder="0">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_lock_wait_timeout:</label>
+                                        <input type="text" class="form-control" id="" placeholder="50">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="">innodb_locks_unsafe_for_binlog:</label>
+                                        <select name="anonymous" id="inputAnonymous" class="form-control">
+                                            <option value="TRUE">TRUE</option>
+                                            <option value="FALSE">FALSE</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                                <legend>Otras configuraciones </legend>
+                                <div class="row">
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">join_buffer_size:</label>
+                                            <input type="text" class="form-control" id="" placeholder="131072">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">interactive_timeout:</label>
+                                            <input type="text" class="form-control" id="" placeholder="28800">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">keep_files_on_create:</label>
+                                            <select name="anonymous" id="inputAnonymous" class="form-control">
+                                                <option value="TRUE">TRUE</option>
+                                                <option value="FALSE">FALSE</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">key_buffer_size:</label>
+                                            <input type="text" class="form-control" id="" placeholder="8388608">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">key_cache_age_threshold:</label>
+                                            <input type="text" class="form-control" id="" placeholder="300">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">key_cache_block_size:</label>
+                                            <input type="text" class="form-control" id="" placeholder="1024">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">key_cache_division_limit:</label>
+                                            <input type="text" class="form-control" id="" placeholder="100">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">max_allowed_packet:</label>
+                                            <input type="text" class="form-control" id="" placeholder="1048576">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">max_connections:</label>
+                                            <input type="text" class="form-control" id="" placeholder="100">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">max_delayed_threads:</label>
+                                            <input type="text" class="form-control" id="" placeholder="20">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">max_join_size:</label>
+                                            <input type="text" class="form-control" id="" placeholder="4294967295">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">max_sort_length:</label>
+                                            <input type="text" class="form-control" id="" placeholder="1024">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">max_sp_recursion_depth:</label>
+                                            <input type="text" class="form-control" id="" placeholder="0">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">query_cache_limit:</label>
+                                            <input type="text" class="form-control" id="" placeholder="1048576">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">query_cache_min_res_unit:</label>
+                                            <input type="text" class="form-control" id="" placeholder="4096">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">query_cache_size:</label>
+                                            <input type="text" class="form-control" id="" placeholder="0">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">query_cache_type:</label>
+                                            <input type="text" class="form-control" id="" placeholder="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">socket:</label>
+                                            <input type="text" class="form-control" id="" placeholder="/tmp/mysql.sock">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">sort_buffer_size:</label>
+                                            <input type="text" class="form-control" id="" placeholder="2097144">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="">wait_timeout:</label>
+                                            <input type="text" class="form-control" id="" placeholder="28800">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-save"></i> Guardar</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
