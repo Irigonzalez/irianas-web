@@ -40,7 +40,11 @@ setup_dict = dict(
         'Development Status :: 1 - Planning',
         'Environment :: Console',
         'Intended Audience :: Developers',
+<<<<<<< HEAD
         'License :: OSI Approved :: BSD License',
+=======
+        'License :: OSI Approved :: MIT License',
+>>>>>>> 02abb1edfadf0bc22d392a10d174e85cdc08dfa0
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.6',

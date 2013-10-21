@@ -22,6 +22,10 @@ if 'check_output' not in dir(subprocess):
 
 from paver.easy import options, task, needs, consume_args
 from paver.setuputils import install_distutils_tasks
+<<<<<<< HEAD
+=======
+from paver.virtual import virtualenv
+>>>>>>> 02abb1edfadf0bc22d392a10d174e85cdc08dfa0
 
 try:
     import colorama
@@ -231,6 +235,10 @@ def lint():
 
 
 @task
+<<<<<<< HEAD
+=======
+@virtualenv(dir="/home/irisel/.virtualenvs/irianas-web")
+>>>>>>> 02abb1edfadf0bc22d392a10d174e85cdc08dfa0
 def test_all():
     """Perform a style check and run all unit tests."""
     retcode = _test_all()
