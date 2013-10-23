@@ -1,4 +1,5 @@
 from flask import (Blueprint, render_template)
+from irianas_web.core import require_login
 
 irianas_module = Blueprint('home', __name__, template_folder='templates')
 
@@ -10,6 +11,9 @@ values = dict(host_name='node.master',
               memory_ram='4 Gb')
 
 
+@require_login
 @irianas_module.route('/home/')
+@irianas_module.route('/')
+@irianas_module.route('/index/')
 def home():
     return render_template('home.html', values=values)
