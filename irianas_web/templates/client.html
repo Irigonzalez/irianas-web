@@ -62,8 +62,8 @@
 
                         <h5>% CPU</h5>
                         <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-                                <span class="sr-only">45% de uso</span>
+                            <div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" style="width: 76%">
+                                <span class="sr-only">76% de uso</span>
                             </div>
                         </div>
 
@@ -110,19 +110,19 @@
                             <table class="table table-hover">
                                 <tbody>
                                     <tr>
-                                        <td><strong>HTTP (Apache)</strong></td>
+                                        <td><strong><a href="{{ url_for('http.http') }}">HTTP (Apache)</a></strong></td>
                                         <td>ON</td>
                                         <td><a href="#" class="btn btn-danger">Detener</a></td>
                                         <td><a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-cloud-download"></i> Desinstalar </a></td>
                                     </tr>
                                     <tr>
-                                        <td><strong>DNS (BIND)</strong></td>
+                                        <td><strong><a href="{{ url_for('dns.dns') }}">DNS (BIND)</a></strong></td>
                                         <td>OFF</td>
                                         <td><a href="#" class="btn btn-success">Encender</a></td>
                                         <td><a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-cloud-download"></i> Desinstalar </a></td>
                                     </tr>
                                     <tr>
-                                        <td><strong>FTP (vSFTP)</strong></td>
+                                        <td><strong><a href="{{ url_for('ftp.ftp') }}">FTP (vSFTP)</a></strong></td>
                                         <td>OFF</td>
                                         <td><a href="#" class="btn btn-success">Encender</a></td>
                                         <td><a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-cloud-download"></i> Desinstalar </a></td>
@@ -134,7 +134,7 @@
                                         <td><a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-cloud-download"></i> Desinstalar </a></td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Base de datos (MYSQL)</strong></td>
+                                        <td><strong><a href="{{ url_for('mysql.mysql') }}">Base de datos (MYSQL)</a></strong></td>
                                         <td>NO INSTALADO</td>
                                         <td><a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-cloud-upload"></i> Instalar </a></td>
                                     </tr>

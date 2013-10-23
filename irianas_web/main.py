@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """:mod:`irianas_web.main` -- Program entry point
 """
+import sys
+sys.path[0:0] = [""]
 from flask import Flask
 from modules.login import irianas_module as login
 from modules.home import irianas_module as home
