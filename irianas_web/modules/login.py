@@ -9,7 +9,6 @@ irianas_module = Blueprint('login', __name__, template_folder='templates')
 
 @irianas_module.route('/login/', methods=['GET', 'POST'])
 def login():
-    print session['token'], session['username']
     if request.form.get('user') and request.form.get('password'):
         data = {"user": request.form.get('user'),
                 "pass": request.form.get('password')}
