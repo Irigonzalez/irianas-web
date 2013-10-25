@@ -18,7 +18,7 @@ from modules.user_ftp import irianas_module as user_ftp
 from modules.cambio_password_ftp import irianas_module as cambio_password_ftp
 from modules.crear_virtual import irianas_module as crear_virtual
 from modules.list_domain import irianas_module as list_domain
-from modules.crear_cliente import irianas_module as crear_cliente
+from modules.create_client import irianas_module as create_client
 from modules.crear_user import irianas_module as crear_user
 
 app = Flask(__name__)
@@ -36,8 +36,10 @@ app.register_blueprint(user_ftp)
 app.register_blueprint(cambio_password_ftp)
 app.register_blueprint(crear_virtual)
 app.register_blueprint(list_domain)
-app.register_blueprint(crear_cliente)
+app.register_blueprint(create_client)
 app.register_blueprint(crear_user)
+app.secret_key = 'EALRUMLR42$()!*#!()$!'
+
 
 if __name__ == '__main__':
     app.run(debug=True)

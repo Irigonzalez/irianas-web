@@ -1,5 +1,7 @@
 from flask import session, redirect
 
+url_server = 'https://127.0.0.1:9001/'
+
 
 def require_login(f):
 
@@ -8,4 +10,4 @@ def require_login(f):
             return f(*args, **kwargs)
         else:
             return redirect('/login')
-        return inner
+    return inner
