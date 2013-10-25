@@ -1,17 +1,49 @@
-{% extends "base.html" %}
-{% block title %}
-    Ingreso de usuario
-{% endblock %}
-{% block content %}
-    <div class="container">
-        <form class="form-signin">
-            <h2 class="form-signin-heading">Irianas</h2>
-            <input type="text" class="form-control" placeholder="Usuario del Sistema" autofocus>
-            <input type="password" class="form-control" placeholder="Contrase&ntilde;a">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesi&oacute;n</button>
-        </form>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ingreso de usuario - Irianas</title>
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-theme.min.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/irianas.css')}}">
+            <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js')}}">></script>
+            <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
 
-    </div>
+    </head>
+    <body>
+        <header id="header" class="">
+        <nav class="navbar navbar-default navbar-inverse" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Irianas</a>
+                </div>
+            </div>
 
-{% endblock %}
+        </nav>
 
+    </header>
+    <!-- /header -->
+
+            <div class="container">
+                <div class="container">
+                    <form class="form-signin" action="/login/" method="POST">
+                        {% if msg %}
+                        <div class="alert alert-danger">{{ msg | safe }}</div>
+                        {% endif %}
+                        <h2 class="form-signin-heading">Irianas</h2>
+                        <input type="text" name="user" class="form-control" placeholder="Usuario del Sistema" autofocus>
+                        <input type="password" name="password" class="form-control" placeholder="Contrase&ntilde;a">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesi&oacute;n</button>
+                    </form>
+
+                </div>
+            </div>
+
+    </body>
+</html>

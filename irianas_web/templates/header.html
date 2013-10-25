@@ -1,17 +1,53 @@
-
-    <nav class="navbar navbar-default navbar-inverse" role="navigation">
-        <div class="container">
+    <header id="header" class="">
+        <nav class="navbar navbar-default navbar-inverse" role="navigation">
+            <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Irianas</a>
-            </div>
-        </div>
-            
-    </nav>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/home/">Irianas</a>
+                </div>
 
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Configuraci&oacute;n <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/home/">Servidor</a></li>
+                                <li><a href="#">Acerca de...</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> {{ session.username }} <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Historial</a></li>
+                                <li><a href="/logout/">Cerrar Sesi&oacute;n</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div><!-- /.navbar-collapse -->
+
+            </div>
+
+        </nav>
+
+    </header>
+    <!-- /header -->
+
+    <div class="container">
+        <div class="btn-group btn-group-justified">
+            <a href="/home/" class="btn btn-primary"><i class="glyphicon glyphicon-home"></i> Inicio</a>
+            <a href="/servers/" class="btn btn-primary"><i class="glyphicon glyphicon-cloud"></i> Servidores</a>
+            <a href="/clients/" class="btn btn-primary"><i class="glyphicon glyphicon-tower"></i> Clientes</a>
+            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Servicios</a>
+            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-question-sign"></i> Estado</a>
+        </div>
+    </div>
+
+    </br>

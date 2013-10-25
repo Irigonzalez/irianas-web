@@ -3,17 +3,6 @@
     Home
 {% endblock %}
 {% block content %}
-	<div class="container">
-		<div class="btn-group btn-group-justified">
-			<a href="{{ url_for('home.home') }}" class="btn btn-primary"><i class="glyphicon glyphicon-home"></i> Inicio</a>
-			<a href="{{ url_for('servers.servers')" class="btn btn-primary"><i class="glyphicon glyphicon-cloud"></i> Servidores</a>
-			<a href="{{ url_for('clients.clients') }}" class="btn btn-primary"><i class="glyphicon glyphicon-tower"></i> Clientes</a>
-			<a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Servicios</a>
-			<a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-question-sign"></i> Estado</a>
-		</div>
-	</div>
-
-	</br>
 
 	<div class="container">
 		<div class="jumbotron">
@@ -35,24 +24,16 @@
 						            	<td><span class="label label-warning">{{ values.host_name }}</span></td>
 						            </tr>
 						            <tr>
-						                <td><strong>Direcci&oacute;n IP</strong></td>
-						            	<td>{{ values.ip_address }}</td>
-						            </tr>
-						            <tr>
 						                <td><strong>Sistema Operativo</strong></td>
-						            	<td>{{ values.opera_system }}</td>
+						            	<td>{{ values.os }}</td>
 						            </tr>
 						            <tr>
 						                <td><strong>Arquitectura</strong></td>
 						            	<td>{{ values.arch }}</td>
 						            </tr>
 						            <tr>
-						                <td><strong>Procesador</strong></td>
-						            	<td>{{ values.processor }}</td>
-						            </tr>
-						            <tr>
 						                <td><strong>Memoria RAM</strong></td>
-						            	<td>{{ values.memory_ram }}</td>
+						            	<td>{{ values.memory }} kb</td>
 						            </tr>
 						        </tbody>
 						    </table>
