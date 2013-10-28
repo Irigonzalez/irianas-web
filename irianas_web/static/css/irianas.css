@@ -34,3 +34,9 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+/* Client Page */
+
+#monitor, #monitor-error, #client-info, #client-error, #services, #services-error, #events-content, #events-error{
+  display: none;
+}

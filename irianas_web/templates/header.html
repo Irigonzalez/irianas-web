@@ -15,17 +15,11 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Configuraci&oacute;n <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/home/">Servidor</a></li>
-                                <li><a href="#">Acerca de...</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="#" id="time_user"></a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> {{ session.username }} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Historial</a></li>
+                                <!-- <li><a href="/user/record/">Historial</a></li> -->
                                 <li><a href="/logout/">Cerrar Sesi&oacute;n</a></li>
                             </ul>
                         </li>
@@ -43,11 +37,11 @@
     <div class="container">
         <div class="btn-group btn-group-justified">
             <a href="/home/" class="btn btn-primary"><i class="glyphicon glyphicon-home"></i> Inicio</a>
-            <a href="/servers/" class="btn btn-primary"><i class="glyphicon glyphicon-cloud"></i> Servidores</a>
+            <a href="/users/" class="btn btn-primary"><i class="glyphicon glyphicon-credit-card"></i> Usuarios</a>
             <a href="/clients/" class="btn btn-primary"><i class="glyphicon glyphicon-tower"></i> Clientes</a>
-            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Servicios</a>
-            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-question-sign"></i> Estado</a>
+            <!-- <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Servicios</a> -->
+            <a href="/time/" id="time_button" class="btn btn-primary"><i class="glyphicon glyphicon-resize-vertical"></i> Expandir Sesi&oacute;n</a>
         </div>
     </div>
 
-    </br>
+    <br>

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-    Config_Http
+    Configuraci&oacute;n de APACHE (HTTP)
 {% endblock %}
 {% block content %}
 
@@ -9,19 +9,26 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="panel panel-info">
-					<div class="panel-heading"><i class="glyphicon glyphicon-exclamation-sign"></i> Configuraci&oacute;n - HTTP (node.12)</div>
+					<div class="panel-heading"><i class="glyphicon glyphicon-exclamation-sign"></i> Configuraci&oacute;n - HTTP ({{ ip_client }})</div>
 					<div class="panel-body">
-						<form action="" method="POST" role="form">
-						    <legend>HTTP (Apache) - node.12</legend>
+						{% if msg %}
+                        <div class="alert alert-danger">{{ msg | safe }}</div>
+                        {% endif %}
+
+                        {% if msg_success %}
+                        <div class="alert alert-success">{{ msg_success | safe }}</div>
+                        {% endif %}
+						<form action="/client/services/config/httpd/{{ ip_client }}" method="POST" role="form">
+						    <legend>HTTP (Apache) - {{ ip_client }}</legend>
 
 							<div class="row">
 
 								<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 									<div class="form-group">
 								        <label for=""> keep_alive:</label>
-								        <select name="anonymous" id="inputAnonymous" class="form-control">
-                                            <option value="ON">ON</option>
-                                            <option value="OFF">OFF</option>
+								        <select name="keep_alive" id="inputAnonymous" class="form-control">
+                                            <option value="On" {% if keep_alive == 'On' %} selected {% endif %}>ON</option>
+                                            <option value="Off" {% if keep_alive == 'Off' %} selected {% endif %}>OFF</option>
                                         </select>
 								    </div>
 								</div>
@@ -29,14 +36,14 @@
 								<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 									<div class="form-group">
 								        <label for="">max_keep_alive:</label>
-								        <input type="text" class="form-control" id="" placeholder="100">
+								        <input type="text" class="form-control" name="max_keep_alive" value="{{ max_keep_alive }}" placeholder="100">
 								    </div>
 								</div>
 
 							    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 									<div class="form-group">
 								        <label for="">keep_alive_timeout:</label>
-								        <input type="text" class="form-control" id="" placeholder="15">
+								        <input type="text" class="form-control" name="keep_alive_timeout" value="{{ keep_alive_timeout }}" placeholder="15">
 								    </div>
 								</div>
 						    </div>
@@ -47,42 +54,42 @@
 								 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 									<div class="form-group">
 									    <label for="">prefork_start:</label>
-									    <input type="text" class="form-control" id="" placeholder="8">
+									    <input type="text" class="form-control" name="prefork_start" value="{{ prefork_start }}" placeholder="8">
 									</div>
 								</div>
 
 									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 										<div class="form-group">
 									        <label for="">prefork_min_spare:</label>
-									        <input type="text" class="form-control" id="" placeholder="5">
+									        <input type="text" class="form-control" name="prefork_min_spare" value="{{ prefork_min_spare }}" placeholder="5">
 									    </div>
 									</div>
 
 									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 										<div class="form-group">
 									        <label for="">prefork_max_spare:</label>
-									        <input type="text" class="form-control" id="" placeholder="20">
+									        <input type="text" class="form-control" name="prefork_max_spare" value="{{ prefork_max_spare }}" placeholder="20">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">prefork_server_limit:</label>
-									        <input type="text" class="form-control" id="" placeholder="256">
+									        <input type="text" class="form-control" name="prefork_server_limit" value="{{ prefork_server_limit }}" placeholder="256">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">prefork_max_clients:</label>
-									        <input type="text" class="form-control" id="" placeholder="256">
+									        <input type="text" class="form-control" name="prefork_max_clients" value="{{ prefork_max_clients }}" placeholder="256">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">prefork_max_request:</label>
-									        <input type="text" class="form-control" id="" placeholder="4000">
+									        <input type="text" class="form-control" name="prefork_max_request" value="{{ prefork_max_request }}" placeholder="4000">
 									    </div>
 									</div>
 							</div>
@@ -93,42 +100,42 @@
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">worker_start:</label>
-									        <input type="text" class="form-control" id="" placeholder="4">
+									        <input type="text" class="form-control" name="worker_start" value="{{ worker_start }}" placeholder="4">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">worker_max_clients:</label>
-									        <input type="text" class="form-control" id="" placeholder="300">
+									        <input type="text" class="form-control" name="worker_max_clients" value="{{ worker_max_clients }}" placeholder="300">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">worker_min_spare:</label>
-									        <input type="text" class="form-control" id="" placeholder="25">
+									        <input type="text" class="form-control" name="worker_min_spare" value="{{ worker_min_spare }}" placeholder="25">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">worker_max_spare:</label>
-									        <input type="text" class="form-control" id="" placeholder="75">
+									        <input type="text" class="form-control" name="worker_max_spare" value="{{ worker_max_spare }}" placeholder="75">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">worker_threads:</label>
-									        <input type="text" class="form-control" id="" placeholder="25">
+									        <input type="text" class="form-control" name="worker_threads" value="{{ worker_threads }}" placeholder="25">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">worker_max_request:</label>
-									        <input type="text" class="form-control" id="" placeholder="0">
+									        <input type="text" class="form-control" name="worker_max_request" value="{{ worker_max_request }}" placeholder="0">
 									    </div>
 									</div>
 							</div>
@@ -139,56 +146,55 @@
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">port:</label>
-									        <input type="text" class="form-control" id="" placeholder="80">
+									        <input type="text" class="form-control" name="port" value="{{ port }}" placeholder="80">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">user:</label>
-									        <input type="text" class="form-control" id="" placeholder="apache">
+									        <input type="text" class="form-control" name="user" value="{{ user }}" placeholder="apache">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">group:</label>
-									        <input type="text" class="form-control" id="" placeholder="apache">
+									        <input type="text" class="form-control" name="group" value="{{ group }}" placeholder="apache">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">server_admin:</label>
-									        <input type="text" class="form-control" id="" placeholder="root@localhost">
+									        <input type="text" class="form-control" name="server_admin" value="{{ server_admin }}" placeholder="root@localhost">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">server_name:</label>
-									        <input type="text" class="form-control" id="" placeholder="wwww.example.com">
+									        <input type="text" class="form-control" name="server_name" value="{{ server_name }}" placeholder="wwww.example.com">
 									    </div>
 									</div>
 
 									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 										<div class="form-group">
 									        <label for="">user_dir:</label>
-									        <select name="anonymous" id="inputAnonymous" class="form-control">
-	                                            <option value="Disabled">Disabled</option>
-	                                            <option value="Unabled">Unabled</option>
+									        <select name="user_dir" id="inputAnonymous" class="form-control">
+	                                            <option value="disabled" {% if user_dir == 'disabled' %} selected {% endif %}>Disabled</option>
+	                                            <option value="enabled" {% if user_dir == 'enabled' %} selected {% endif %}>Enabled</option>
 	                                        </select>
 									    </div>
 									</div>
 							</div>
 
-
-
 						    <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-save"></i> Guardar</button>
 
 						    <a class="btn btn-primary" href="{{ url_for('crear_virtual.crear_virtual') }}">Administrar "Virtual Host"</a>
 
-						    <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i>  Administrar M&oacute;dulos</button>
+						    <a class="btn btn-primary" href="/client/{{ ip_client }}">Volver</a>
+
 						</form>
 
 					</div>
