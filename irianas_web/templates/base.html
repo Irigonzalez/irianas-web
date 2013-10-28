@@ -8,6 +8,12 @@
             <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/irianas.css')}}">
             <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js')}}">></script>
             <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+            <script type="text/javascript" src="{{ url_for('static', filename='js/bootbox.min.js')}}"></script>
+            <script type="text/javascript" src="{{ url_for('static', filename='js/irianas.js')}}"></script>
+            <script type=text/javascript>
+               $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+               $IP_CLIENT = '';
+            </script>
         {% endblock %}
 
     </head>

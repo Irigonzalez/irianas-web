@@ -13,31 +13,38 @@
 					<div class="panel-body">
 						{% if msg %}
                         <div class="alert alert-danger">{{ msg | safe }}</div>
+                        {% endif %}
+
+                        {% if msg_success %}
+                        <div class="alert alert-success">{{ msg_success | safe }}</div>
                         {% else %}
 						<div class="table-responsive">
 						    <table class="table table-hover">
 						        <thead>
 						            <tr>
-						            	<th>Servidor</th>
-						                <th>Nombre del Anfitri&oacute;n</th>
 						                <th>Direcci&oacute;n IP</th>
 						            </tr>
 						        </thead>
 						        <tbody>
-						            <tr>
-						            	<td><span class="label label-success">node.1</span></td>
-						                <td><span class="label label-success">node.10</span></td>
-						                <td>10.10.10.12</td>
-						                <td><a href="/client/" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Administrar </a></td>
+						        	{% for item in clients %}
+								    <tr>
+						                <td>{{ item.ip }}</td>
+						                <td>
+						                	<a href="/client/{{ item.ip }}" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Administrar </a>
+						                	<a href="/clients/delete/{{ item.ip }}" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Eliminar </a>
+						                </td>
 						            </tr>
+								    {% endfor %}
 						        </tbody>
 						    </table>
 						</div>
-						<h5>Legenda</h5>
-						<span class="label label-success">Activo</span> | <span class="label label-danger">Inactivo</span>
 						{% endif %}
-						<a href="/client/add" class="btn btn-primary">Agregar un cliente</a>
+						<a href="/client/add/" class="btn btn-primary">Agregar un cliente</a>
+						<a href="/home/" class="btn btn-primary">Volver</a>
+						</div>
+
 					</div>
+
 				</div>
 			</div>
 		</div>

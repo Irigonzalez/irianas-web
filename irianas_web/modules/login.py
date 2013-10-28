@@ -12,7 +12,11 @@ def login():
     if request.form.get('user') and request.form.get('password'):
         data = {"user": request.form.get('user'),
                 "pass": request.form.get('password')}
-        r = requests.post(url_server + 'login', data=data, verify=False)
+        try:
+            r = requests.post(url_server + 'login', data=data, verify=False)
+        except requests.ConnectionError:
+            return redirect('/error/connection')
+
         if r.status_code == 200:
             result = r.json()
             if result.get('token'):
@@ -32,8 +36,13 @@ def login():
 @require_login
 def logout():
     data = dict(token=session.get('token'))
-    r = requests.put(url_server + 'login/' + session.get('username'),
-                     data=data, verify=False)
+
+    try:
+        r = requests.put(url_server + 'login/' + session.get('username'),
+                         data=data, verify=False)
+    except requests.ConnectionError:
+        return redirect('/error/connection')
+
     if r.status_code == 200:
         result = r.json()
         if result.get("action"):

@@ -12,7 +12,11 @@ irianas_module = Blueprint('home', __name__, template_folder='templates')
 @require_login
 def home():
     data = dict(token=session.get('token'))
-    r = requests.get(url_server + 'info', data=data, verify=False)
+    try:
+        r = requests.get(url_server + 'info', data=data, verify=False)
+    except requests.ConnectionError:
+        return redirect('/error/connection')
+
     if r.status_code == 200:
         result = r.json()
         return render_template('home.html', values=result)
