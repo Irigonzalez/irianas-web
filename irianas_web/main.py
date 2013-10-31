@@ -10,6 +10,7 @@ from modules.clients import irianas_module as clients
 from modules.http import irianas_module as http
 from modules.ftp import irianas_module as ftp
 from modules.dns import irianas_module as dns
+from modules.sshd import irianas_module as ssh
 from modules.mysql import irianas_module as mysql
 from modules.servers import irianas_module as servers
 from modules.client import irianas_module as client
@@ -30,6 +31,7 @@ app.register_blueprint(clients)
 app.register_blueprint(http)
 app.register_blueprint(ftp)
 app.register_blueprint(dns)
+app.register_blueprint(ssh)
 app.register_blueprint(mysql)
 app.register_blueprint(servers)
 app.register_blueprint(client)

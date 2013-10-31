@@ -148,25 +148,25 @@
                                             <td><a id="apache-installed-button" href="#" class="btn"></a></td>
                                         </tr>
                                         <tr>
-                                            <td><strong><a href="{{ url_for('dns.dns') }}">DNS (BIND)</a></strong></td>
+                                            <td><strong><a href="/client/services/config/bind/{{ ip_client }}">DNS (BIND)</a></strong></td>
                                             <td><div id="bind-status"></div></td>
                                             <td><a id="bind-status-button" href="#" class="btn"></a></td>
                                             <td><a id="bind-installed-button" href="#" class="btn"></a></td>
                                         </tr>
                                         <tr>
-                                            <td><strong><a href="{{ url_for('ftp.ftp') }}">FTP (vSFTP)</a></strong></td>
+                                            <td><strong><a href="/client/services/config/vsftpd/{{ ip_client }}">FTP (vSFTP)</a></strong></td>
                                             <td><div id="vsftpd-status"></div></td>
                                             <td><a id="vsftpd-status-button" href="#" class="btn"></a></td>
                                             <td><a id="vsftpd-installed-button" href="#" class="btn"></a></td>
                                         </tr>
                                         <tr>
-                                            <td><strong><a href="/client/service/ssh/{{ ip_client }}">SSH (OpenSSH)</a></strong></td>
+                                            <td><strong><a href="/client/services/config/ssh/{{ ip_client }}">SSH (OpenSSH)</a></strong></td>
                                             <td><div id="ssh-status"></div></td>
                                             <td><a id="ssh-status-button" href="#" class="btn"></a></td>
                                             <td><a id="ssh-installed-button" href="#" class="btn"></a></td>
                                         </tr>
                                         <tr>
-                                            <td><strong><a href="{{ url_for('mysql.mysql') }}">Base de datos (MYSQL)</a></strong></td>
+                                            <td><strong><a href="/client/services/config/mysql/{{ ip_client }}">Base de datos (MYSQL)</a></strong></td>
                                             <td><div id="mysql-status"></div></td>
                                             <td><a id="mysql-status-button" href="#" class="btn"></a></td>
                                             <td><a id="mysql-installed-button" href="#" class="btn"></a></td>

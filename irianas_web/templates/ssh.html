@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-    Configuraci&oacute;n DNS
+    Configuraci&oacute;n SSH
 {% endblock %}
 {% block content %}
 
@@ -18,8 +18,8 @@
                         {% if msg_success %}
                         <div class="alert alert-success">{{ msg_success | safe }}</div>
                         {% endif %}
-                        <form action="/client/services/config/bind/{{ ip_client }}" method="POST" role="form">
-                            <legend>DNS (Bind) </legend>
+                        <form action="/client/services/config/ssh/{{ ip_client }}" method="POST" role="form">
+                            <legend>SSH (OpenSSH) </legend>
 
                             <div class="row">
 
@@ -32,15 +32,18 @@
 
                                 <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
                                     <div class="form-group">
-                                        <label for="">ip_address:</label>
-                                        <input name="ip_address" type="text" value="{{ ip_address }}" class="form-control" id="" placeholder="127.0.0.1">
+                                        <label for="">permit_root:</label>
+                                        <select name="permit_root" id="inputAnonymous" class="form-control">
+                                            <option value="yes" {% if permit_root == 'yes' %}selected{% endif %}>YES</option>
+                                            <option value="no" {% if permit_root == 'no' %}selected{% endif %}>NO</option>
+                                        </select>
                                     </div>
                                 </div>
 
                                 <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
                                     <div class="form-group">
-                                        <label for="">ip_address_v6:</label>
-                                        <input name="ip_address_v6" type="text" value="{{ ip_address_v6 }}" class="form-control" id="" placeholder="::1">
+                                        <label for="">max_auth_tries:</label>
+                                        <input name="max_auth_tries" type="text" value="{{ max_auth_tries }}" class="form-control" id="" placeholder="::1">
                                     </div>
                                 </div>
                             </div>
